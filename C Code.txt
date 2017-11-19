@@ -1,0 +1,12 @@
+bool isUgly(int num) {
+    if(num < 1) return 0;
+    if(num == 1)    return 1;
+    int fac[3] = {2, 3, 5};
+    int i = 0;
+    do{
+        if(num % fac[i] == 0)   num /= fac[i];
+        else    ++i;
+    }while(num != 1 && i < 3);
+    if(i < 3)  return 1;
+    else return 0;
+}
